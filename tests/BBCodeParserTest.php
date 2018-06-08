@@ -14,7 +14,7 @@ class BBCodeParserTest extends TestCase
 
     /**
      * @see \ivuorinen\BBCode\BBCodeParser::$parsers
-     * @var array Easier to maintain basic tests
+     * @var array[] Easier to maintain basic tests
      */
     public $testedParsers = array(
         'bold' => array(

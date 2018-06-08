@@ -6,6 +6,9 @@ class BBCodeParser
 {
     use ArrayTrait;
 
+    /**
+     * @var array[] These are our BBCode parsers
+     */
     public $parsers = [
         'bold' => [
             'pattern' => '/\[b\](.*?)\[\/b\]/s',
@@ -114,6 +117,9 @@ class BBCodeParser
         ]
     ];
 
+    /**
+     * @var array[] Our enabled parsers available with getParsers()
+     */
     private $enabledParsers;
 
     public function __construct()
