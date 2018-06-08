@@ -1,6 +1,6 @@
 [![Latest Version](https://img.shields.io/github/release/ivuorinen/bbcodeparser.svg?style=flat-square)](https://github.com/ivuorinen/bbcodeparser/releases)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Build Status](https://img.shields.io/travis/ivuorinen/BBCodeParser/master.svg?style=flat-square)](https://travis-ci.org/ivuorinen/BBCodeParser)
+[![Build Status](https://img.shields.io/travis/ivuorinen/bbcodeparser/master.svg?style=flat-square)](https://travis-ci.org/ivuorinen/bbcodeparser)
 [![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/ivuorinen/bbcodeparser/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/ivuorinen/bbcodeparser/code-structure)
 [![Quality Score](https://img.shields.io/scrutinizer/g/ivuorinen/bbcodeparser/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/ivuorinen/bbcodeparser)
 [![Total Downloads](https://img.shields.io/packagist/dt/ivuorinen/bbcodeparser.svg?style=flat-square)](https://packagist.org/packages/ivuorinen/bbcodeparser)
