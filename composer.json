@@ -5,6 +5,9 @@
     "homepage": "https://github.com/ivuorinen/bbcodeparser",
     "type": "library",
     "license": "MIT",
+    "support": {
+        "issues": "https://github.com/ivuorinen/bbcodeparser/issues"
+    },
     "authors": [
         {
             "name": "Ismo Vuorinen",
@@ -37,6 +40,9 @@
         ]
     },
     "minimum-stability": "stable",
+    "replace": {
+        "golonka/bbcodeparser": "*"
+    },
     "extra": {
         "laravel": {
             "providers": [
