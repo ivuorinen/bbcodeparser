@@ -30,5 +30,4 @@ class BBCodeParserFacadeTest extends TestCase
         $method->setAccessible(true);
         return $method->invokeArgs($obj, $args);
     }
-
 }
