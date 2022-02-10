@@ -1,5 +1,7 @@
 <?php
 
+namespace ivuorinen\BBCode\Tests;
+
 use ivuorinen\BBCode\BBCodeParser;
 
 class BBCodeParserTest extends TestCase
@@ -93,7 +95,8 @@ class BBCodeParserTest extends TestCase
         ),
         'youtube' => array(
             'bbcode' => 'youtube',
-            'expected_test' => '<iframe width="560" height="315" src="//www.youtube.com/embed/%s" frameborder="0" allowfullscreen></iframe>',
+            'expected_test' => '<iframe width="560" height="315" src="//www.youtube.com/embed/%s"' .
+            ' frameborder="0" allowfullscreen></iframe>',
             'values' => ['dQw4w9WgXcQ']
         ),
         'listitem' => array(
@@ -135,14 +138,13 @@ class BBCodeParserTest extends TestCase
         ['bbcode' => '[I]Result[/i]', 'expected' => '<em>Result</em>'],
     );
 
-    protected function setUp()
+    protected function setUp(): void
     {
-        parent::setUp();
-
         $this->parser = new BBCodeParser();
+        parent::setUp();
     }
 
-    public function test_it_has_known_parsers()
+    public function testItHasKnownParsers()
     {
         $this->assertEquals(
             $this->parser->parsers,
@@ -150,7 +152,7 @@ class BBCodeParserTest extends TestCase
         );
     }
 
-    public function test_parsers_have_required_keys()
+    public function testParsersHaveRequiredKeys()
     {
         $keys = array('pattern', 'replace', 'content');
         $parsers = $this->parser->getParsers();
@@ -166,7 +168,7 @@ class BBCodeParserTest extends TestCase
         }
     }
 
-    public function test_parser_regexp_is_valid()
+    public function testParserRegexpIsValid()
     {
         $parsers = $this->parser->getParsers();
         foreach ($parsers as $parserName => $parser) {
@@ -179,7 +181,7 @@ class BBCodeParserTest extends TestCase
         }
     }
 
-    public function test_parser_default()
+    public function testParserDefault()
     {
         foreach ($this->testedParsers as $name => $options) {
             $test = $this->createTest($options, $name);
@@ -189,7 +191,7 @@ class BBCodeParserTest extends TestCase
         }
     }
 
-    public function test_parser_sensitive()
+    public function testParserSensitive()
     {
         $testTemp = 'Test: %s / bbcode: %s / Actual: %s / Expected: %s';
 
@@ -203,7 +205,11 @@ class BBCodeParserTest extends TestCase
 
             $result = $this->parser->parseCaseSensitive($bbcode);
             $this->assertEquals($expected, $result, sprintf(
-                $testTemp, 'lowercase, sensitive', $bbcode, $result, $expected
+                $testTemp,
+                'lowercase, sensitive',
+                $bbcode,
+                $result,
+                $expected
             ));
         }
 
@@ -217,7 +223,11 @@ class BBCodeParserTest extends TestCase
 
             $result = $this->parser->parseCaseSensitive($bbcode);
             $this->assertNotEquals($expected, $result, sprintf(
-                $testTemp, 'uppercase, sensitive', $bbcode, $result, $expected
+                $testTemp,
+                'uppercase, sensitive',
+                $bbcode,
+                $result,
+                $expected
             ));
         }
 
@@ -231,12 +241,16 @@ class BBCodeParserTest extends TestCase
 
             $result = $this->parser->parseCaseSensitive($bbcode);
             $this->assertNotEquals($expected, $result, sprintf(
-                $testTemp, 'mixed case, sensitive', $bbcode, $result, $expected
+                $testTemp,
+                'mixed case, sensitive',
+                $bbcode,
+                $result,
+                $expected
             ));
         }
     }
 
-    public function test_parser_insensitive()
+    public function testParserInsensitive()
     {
         /**
          * Now we run with insensitive case turned on, so everything
@@ -253,7 +267,8 @@ class BBCodeParserTest extends TestCase
             $bbcode = $case['bbcode'];
             $expected = $case['expected'];
             $this->assertEquals(
-                $expected, $this->parser->parse($bbcode, true)
+                $expected,
+                $this->parser->parse($bbcode, true)
             );
 
             $this->assertEquals(
@@ -263,7 +278,7 @@ class BBCodeParserTest extends TestCase
         }
     }
 
-    public function test_stripBBCodeTags()
+    public function testStripBBCodeTags()
     {
         foreach ($this->mixedCaseTests as $test) {
             $this->assertEquals(
@@ -273,7 +288,7 @@ class BBCodeParserTest extends TestCase
         }
     }
 
-    public function test_only()
+    public function testOnly()
     {
         $keys = array('bold', 'underline');
 
@@ -284,7 +299,7 @@ class BBCodeParserTest extends TestCase
         $this->assertNotEquals(array_keys($parsers), array_keys($onlyFew));
     }
 
-    public function test_except()
+    public function testExcept()
     {
         $keys = array('bold', 'underline');
 
@@ -295,7 +310,7 @@ class BBCodeParserTest extends TestCase
         $this->assertNotEquals(array_keys($parsers), array_keys($exceptFew));
     }
 
-    public function test_adding_a_new_parser()
+    public function testAddingNewParser()
     {
         $this->parser->setParser('test', 'x', 'y', 'z');
         $expected = array('pattern' => 'x', 'replace' => 'y', 'content' => 'z');
@@ -305,7 +320,7 @@ class BBCodeParserTest extends TestCase
         $this->assertArraySubset($expected, $parsers['test']);
     }
 
-    public function test_we_have_all_parsers_tested()
+    public function testWeHaveAllParsersTested()
     {
         $parsers = array_keys($this->parser->except($this->skipParsers)->getParsers());
         $missing = array();
@@ -336,10 +351,10 @@ class BBCodeParserTest extends TestCase
      * rules for automated test generation. Automation ftw.
      *
      * @param array $options
-     * @param $name
+     * @param string $name
      * @return array
      */
-    public function createTest($options = [], $name)
+    public function createTest($options = [], $name = '')
     {
         if (!isset($options['bbcode'])) {
             $options['bbcode'] = $name;

@@ -1,5 +1,7 @@
 <?php
 
+namespace ivuorinen\BBCode\Tests;
+
 use ivuorinen\BBCode\BBCodeParserServiceProvider;
 
 class BBCodeParserServiceProviderTest extends TestCase

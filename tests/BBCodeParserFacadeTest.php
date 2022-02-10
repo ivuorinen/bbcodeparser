@@ -1,8 +1,10 @@
 <?php
 
+namespace ivuorinen\BBCode\Tests;
+
 class BBCodeParserFacadeTest extends TestCase
 {
-    public function test_facade_exists_and_has_bbcode()
+    public function testFacadeExistsAndHasBbcode()
     {
         try {
             $method = $this->callMethod(

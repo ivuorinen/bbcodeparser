@@ -1,5 +1,7 @@
 <?php
 
+namespace ivuorinen\BBCode\Tests;
+
 use ivuorinen\BBCode\Traits\ArrayTrait;
 
 class ArrayTraitHelper
