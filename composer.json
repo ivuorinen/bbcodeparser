@@ -33,7 +33,7 @@
         "issues": "https://github.com/ivuorinen/bbcodeparser/issues"
     },
     "require": {
-        "php": ">=7.3 || ^8.0 || ^8.1"
+        "php": ">=7.4 || ^8.0 || ^8.1"
     },
     "require-dev": {
         "dms/phpunit-arraysubset-asserts": "v0.3.1",
