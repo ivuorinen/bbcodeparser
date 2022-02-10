@@ -2,24 +2,21 @@
 
 namespace ivuorinen\BBCode\Tests;
 
-use ArrayTraitHelper;
-use TestCase;
-
 class ArrayTraitTest extends TestCase
 {
     private $class;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->class = new ArrayTraitHelper();
     }
 
-    public function test_array_only()
+    public function testArrayOnly()
     {
         $this->assertTrue(\method_exists($this->class, 'arrayOnly'));
     }
 
-    public function test_array_except()
+    public function testArrayExcept()
     {
         $this->assertTrue(\method_exists($this->class, 'arrayExcept'));
     }
