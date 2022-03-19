@@ -37,7 +37,7 @@
     },
     "require-dev": {
         "dms/phpunit-arraysubset-asserts": "0.4.0",
-        "ergebnis/composer-normalize": "2.24.0",
+        "ergebnis/composer-normalize": "2.24.1",
         "orchestra/testbench": "v6.24.1",
         "phpunit/phpunit": "9.5.19",
         "squizlabs/php_codesniffer": "3.6.2"
