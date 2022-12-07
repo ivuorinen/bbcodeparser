@@ -6,20 +6,11 @@
     "keywords": [
         "bbcode",
         "parser",
-        "laravel",
-        "psr-1",
-        "psr-2",
-        "psr-4"
+        "laravel"
     ],
-    "scripts": {
-        "test": "vendor/bin/phpunit",
-        "lint": "vendor/bin/phpcs",
-        "lint-fix": "vendor/bin/phpcbf"
-    },
     "authors": [
         {
             "name": "Ismo Vuorinen",
-            "email": "ismo@ivuorinen.net",
             "homepage": "https://github.com/ivuorinen"
         },
         {
@@ -33,7 +24,7 @@
         "issues": "https://github.com/ivuorinen/bbcodeparser/issues"
     },
     "require": {
-        "php": ">=7.4 || ^8.0 || ^8.1"
+        "php": "^8.1"
     },
     "require-dev": {
         "dms/phpunit-arraysubset-asserts": "0.4.0",
@@ -73,5 +64,10 @@
                 "ivuorinen\\BBCode\\BBCodeParserServiceProvider"
             ]
         }
+    },
+    "scripts": {
+        "lint": "vendor/bin/phpcs",
+        "lint-fix": "vendor/bin/phpcbf",
+        "test": "vendor/bin/phpunit"
     }
 }
