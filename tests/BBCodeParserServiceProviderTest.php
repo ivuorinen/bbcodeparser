@@ -6,13 +6,13 @@ use ivuorinen\BBCode\BBCodeParserServiceProvider;
 
 class BBCodeParserServiceProviderTest extends TestCase
 {
-    public function testProvides()
+    public function testProvides(): void
     {
         $provider = new BBCodeParserServiceProvider($this->app);
         $this->assertEquals(['bbcode'], $provider->provides());
     }
 
-    public function testRegister()
+    public function testRegister(): void
     {
         $this->assertInstanceOf(
             \ivuorinen\BBCode\BBCodeParser::class,

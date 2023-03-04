@@ -4,7 +4,7 @@ namespace ivuorinen\BBCode\Tests;
 
 class BBCodeParserFacadeTest extends TestCase
 {
-    public function testFacadeExistsAndHasBbcode()
+    public function testFacadeExistsAndHasBbcode(): void
     {
         try {
             $method = $this->callMethod(
@@ -13,7 +13,7 @@ class BBCodeParserFacadeTest extends TestCase
                 []
             );
             $this->assertEquals('bbcode', $method);
-        } catch (ReflectionException $e) {
+        } catch (\ReflectionException $e) {
             $this->throwException($e);
         }
     }
@@ -23,7 +23,7 @@ class BBCodeParserFacadeTest extends TestCase
      * @param $name
      * @param array $args
      * @return mixed
-     * @throws ReflectionException
+     * @throws \ReflectionException
      */
     public static function callMethod($obj, $name, array $args)
     {

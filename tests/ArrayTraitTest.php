@@ -11,12 +11,12 @@ class ArrayTraitTest extends TestCase
         $this->class = new ArrayTraitHelper();
     }
 
-    public function testArrayOnly()
+    public function testArrayOnly(): void
     {
         $this->assertTrue(\method_exists($this->class, 'arrayOnly'));
     }
 
-    public function testArrayExcept()
+    public function testArrayExcept(): void
     {
         $this->assertTrue(\method_exists($this->class, 'arrayExcept'));
     }
