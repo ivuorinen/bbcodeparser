@@ -316,7 +316,10 @@ class BBCodeParserTest extends TestCase
         $parsers = $this->parser->getParsers();
 
         $this->assertArrayHasKey('test', $parsers);
-        $this->assertArraySubset($expected, $parsers['test']);
+        foreach ($expected as $key => $value) {
+            $this->assertTrue(array_key_exists($key, $parsers['test']));
+            $this->assertEquals($value, $parsers['test'][$key]);
+        }
     }
 
     public function testWeHaveAllParsersTested(): void
@@ -386,12 +389,5 @@ class BBCodeParserTest extends TestCase
         }
 
         return $options;
-    }
-    /**
-     * @param array<int,mixed> $expected
-     * @param mixed $argument1
-     */
-    private function assertArraySubset(array $expected, $argument1): void
-    {
     }
 }
