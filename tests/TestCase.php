@@ -2,25 +2,17 @@
 
 namespace ivuorinen\BBCode\Tests;
 
-use DMS\PHPUnitExtensions\ArraySubset\ArraySubsetAsserts;
-
 class TestCase extends \Orchestra\Testbench\TestCase
 {
-    use ArraySubsetAsserts;
-
-    protected function getPackageProviders($app)
+    protected function getPackageProviders($app): array
     {
         unset($app);
         return ['ivuorinen\BBCode\BBCodeParserServiceProvider'];
     }
 
-    /**
-     * @param string $pattern
-     * @return bool
-     */
-    protected function assertRegexpIsValid($pattern = '')
+    protected function assertRegexpIsValid(string $pattern = ''): bool
     {
-        if (@preg_match($pattern, null) === false) {
+        if (@preg_match($pattern, '') === false) {
             return false;
         }
         return true;

@@ -14,7 +14,7 @@ class ArrayTraitHelper
      * @see \ivuorinen\BBCode\Traits\ArrayTrait::arrayOnly
      * @return array
      */
-    public function publicArrayOnly(array $parsers, $only)
+    public function publicArrayOnly(array $parsers, $only): array
     {
         return $this->arrayOnly($parsers, $only);
     }
@@ -25,7 +25,7 @@ class ArrayTraitHelper
      * @see \ivuorinen\BBCode\Traits\ArrayTrait::arrayExcept
      * @return array
      */
-    public function publicArrayExcept(array $parsers, $except)
+    public function publicArrayExcept(array $parsers, $except): array
     {
         return $this->arrayExcept($parsers, $except);
     }
