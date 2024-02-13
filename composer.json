@@ -1,72 +1,72 @@
 {
-    "name": "ivuorinen/bbcodeparser",
-    "description": "Parse your BBCode easy with this library.",
-    "license": "MIT",
-    "type": "library",
-    "keywords": [
-        "bbcode",
-        "parser",
-        "laravel"
-    ],
-    "authors": [
-        {
-            "name": "Ismo Vuorinen",
-            "homepage": "https://github.com/ivuorinen"
-        },
-        {
-            "name": "Joseph Landberg",
-            "email": "joseph.landberg@gmail.com",
-            "homepage": "https://github.com/golonka/"
-        }
-    ],
-    "homepage": "https://github.com/ivuorinen/bbcodeparser",
-    "support": {
-        "issues": "https://github.com/ivuorinen/bbcodeparser/issues"
+  "name": "ivuorinen/bbcodeparser",
+  "description": "Parse your BBCode easy with this library.",
+  "license": "MIT",
+  "type": "library",
+  "keywords": [
+    "bbcode",
+    "parser",
+    "laravel"
+  ],
+  "authors": [
+    {
+      "name": "Ismo Vuorinen",
+      "homepage": "https://github.com/ivuorinen"
     },
-    "require": {
-        "php": "^8.1"
-    },
-    "require-dev": {
-        "ergebnis/composer-normalize": "^2.30",
-        "orchestra/testbench": "^8",
-        "phpunit/phpunit": "^10",
-        "squizlabs/php_codesniffer": "^3"
-    },
-    "replace": {
-        "golonka/bbcodeparser": "*"
-    },
-    "minimum-stability": "stable",
-    "autoload": {
-        "psr-4": {
-            "ivuorinen\\BBCode\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "ivuorinen\\BBCode\\Tests\\": "tests/"
-        },
-        "classmap": [
-            "tests/"
-        ]
-    },
-    "config": {
-        "allow-plugins": {
-            "ergebnis/composer-normalize": true
-        }
-    },
-    "extra": {
-        "laravel": {
-            "aliases": {
-                "BBCode": "ivuorinen\\BBCode\\Facades\\BBCodeParser"
-            },
-            "providers": [
-                "ivuorinen\\BBCode\\BBCodeParserServiceProvider"
-            ]
-        }
-    },
-    "scripts": {
-        "lint": "vendor/bin/phpcs",
-        "lint-fix": "vendor/bin/phpcbf",
-        "test": "vendor/bin/phpunit"
+    {
+      "name": "Joseph Landberg",
+      "email": "joseph.landberg@gmail.com",
+      "homepage": "https://github.com/golonka/"
     }
+  ],
+  "homepage": "https://github.com/ivuorinen/bbcodeparser",
+  "support": {
+    "issues": "https://github.com/ivuorinen/bbcodeparser/issues"
+  },
+  "require": {
+    "php": "^8.3"
+  },
+  "require-dev": {
+    "ergebnis/composer-normalize": "^2",
+    "orchestra/testbench": "^8",
+    "squizlabs/php_codesniffer": "^3"
+  },
+  "replace": {
+    "golonka/bbcodeparser": "*"
+  },
+  "minimum-stability": "stable",
+  "autoload": {
+    "psr-4": {
+      "ivuorinen\\BBCode\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "ivuorinen\\BBCode\\Tests\\": "tests/"
+    },
+    "classmap": [
+      "tests/"
+    ]
+  },
+  "config": {
+    "allow-plugins": {
+      "ergebnis/composer-normalize": true,
+      "kylekatarnls/update-helper": true
+    }
+  },
+  "extra": {
+    "laravel": {
+      "aliases": {
+        "BBCode": "ivuorinen\\BBCode\\Facades\\BBCodeParser"
+      },
+      "providers": [
+        "ivuorinen\\BBCode\\BBCodeParserServiceProvider"
+      ]
+    }
+  },
+  "scripts": {
+    "lint": "vendor/bin/phpcs",
+    "lint-fix": "vendor/bin/phpcbf",
+    "test": "vendor/bin/phpunit"
+  }
 }
