@@ -28,7 +28,7 @@
   },
   "require-dev": {
     "ergebnis/composer-normalize": "^2",
-    "orchestra/testbench": "^8",
+    "orchestra/testbench": "^9",
     "squizlabs/php_codesniffer": "^3"
   },
   "replace": {
