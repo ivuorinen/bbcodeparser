@@ -1,4 +1,6 @@
-<?php namespace ivuorinen\BBCode;
+<?php
+
+namespace ivuorinen\BBCode;
 
 use Illuminate\Support\ServiceProvider;
 
